@@ -1,4 +1,5 @@
 import Box from '@mui/material/Box';
+import { Link } from 'react-router-dom';
 
 interface SidebarProps {
   children: React.ReactNode;
@@ -11,8 +12,10 @@ const Sidebar = ({ children }: SidebarProps) => {
           border: "1px solid rgba(0, 0, 0, 0.12)",
           backgroundColor: "#FCFBFA"}}>
         <Box sx={{ display: "flex", gap: "0.25rem"}} component="header">
-          <img src="/north-pole-factory-logo-icon.svg" alt="Blue star" />
-          <img src="/north-pole-factory-logo-text.svg" alt="North Pole Factory" />
+          <Link to="/">
+            <img src="/north-pole-factory-logo-icon.svg" alt="Blue star" />
+            <img src="/north-pole-factory-logo-text.svg" alt="North Pole Factory" />
+          </Link>
         </Box>
         {children}
     </Box>
