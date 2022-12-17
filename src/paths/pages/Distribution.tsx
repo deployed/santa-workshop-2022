@@ -1,5 +1,6 @@
 import Topbar from "../../components/Topbar";
 import Box from "@mui/system/Box";
+import DistributionPackagesList from "../../components/DistributionPackagesList";
 import DistributionTimer from "../../components/DistributionTimer";
 import ProgressBar from "../../components/ProgressBar";
 
@@ -11,8 +12,8 @@ const Distribution = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1,
       }}>
-        Distribution
         <ProgressBar deliveriesNumber={14}/>
+        <DistributionPackagesList/>
         <DistributionTimer/>
       </Box>
     </>

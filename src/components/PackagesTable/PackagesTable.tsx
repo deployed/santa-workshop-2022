@@ -1,4 +1,4 @@
-import React from "react";
+import TextComponent from "../TextComponent";
 import {
   Table,
   TableBody,
@@ -9,6 +9,8 @@ import {
 } from "@mui/material";
 import { TableContainer } from "@mui/material";
 import "./PackagesTable.css";
+import PackageStatus from "../PackageStatus";
+import FormatDate from "../FormatDate";
 
 function createData(
   id: number,
@@ -22,8 +24,8 @@ function createData(
 }
 
 const rows = [
-  createData(0, "Marek", "new", "Polska", "Kraków", "10-12-2022"),
-  createData(1, "Zosia", "new", "Polska", "Kraków", "10-12-2022"),
+  createData(0, "Marek", "new", "Polska", "Kraków", "2022-12-17T14:01:31.184Z"),
+  createData(1, "Zosia", "new", "Polska", "Kraków", "2023-10-17T14:01:31.184Z"),
 ];
 
 const packagesTable = () => {
@@ -54,8 +56,13 @@ const packagesTable = () => {
               <TableCell>
                 <Checkbox disabled checked />
               </TableCell>
-              {titles.map((title, i) => (
-                <TableCell key={i} className="cell" align="center">
+              {titles.map((title) => (
+                <TableCell
+                  key={title}
+                  className="cell"
+                  style={{ fontWeight: "bolder" }}
+                  align="center"
+                >
                   {title}
                 </TableCell>
               ))}
@@ -65,24 +72,30 @@ const packagesTable = () => {
           </TableHead>
           <TableBody>
             {rows.map((row) => {
-              const values = [
-                row.id,
-                row.name,
-                row.status,
-                row.country,
-                row.city,
-                row.created_at,
-              ];
               return (
                 <TableRow key={row.id}>
                   <TableCell component="th" scope="row">
                     <Checkbox />
                   </TableCell>
-                  {values.map((value, i) => (
-                    <TableCell key={i} align="center">
-                      {value}
-                    </TableCell>
-                  ))}
+                  <TableCell align="center">
+                    <TextComponent>{row.id}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">
+                    <TextComponent>{row.name}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">
+                    <PackageStatus status={row.status} />
+                  </TableCell>
+                  <TableCell align="center">
+                    <TextComponent>{row.country}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">
+                    <TextComponent>{row.city}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">
+                    <FormatDate strangeDate={row.created_at} />
+                  </TableCell>
+                  <TableCell align="center">pakuj</TableCell>
                 </TableRow>
               );
             })}
