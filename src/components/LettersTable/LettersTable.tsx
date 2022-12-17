@@ -33,7 +33,7 @@ export default function LettersTable() {
                         <TableCell>
                             <Checkbox/>
                         </TableCell>
-                        {titles.map(title => {return <TableHeaderElement title={title}/>})}
+                        {titles.map(title => {return <TableHeaderElement key={title} title={title}/>})}
                     </TableRow>
                 </TableHead>
             </Table>
