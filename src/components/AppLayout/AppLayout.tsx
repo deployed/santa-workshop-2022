@@ -7,6 +7,7 @@ import ListItemText from '@mui/material/ListItemText';
 import Star from '@mui/icons-material/Star';
 import { paths } from '../../paths';
 import Sidebar from './Sidebar';
+import ModalPackage from '../ModalPackage';
 
 
 const AppLayout = () => {
@@ -23,7 +24,7 @@ const AppLayout = () => {
         </List>
       </Sidebar>
       <Box sx={{ flexGrow: 1 , display: "flex", flexDirection: "column" }}>
-        <Outlet />
+        <ModalPackage/>
       </Box>
     </Box>
   )
