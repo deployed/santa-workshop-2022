@@ -7,16 +7,17 @@ import TableContainer from "@mui/material/TableContainer"
 import Table from "@mui/material/Table"
 import Paper from "@mui/material/Paper"
 import Checkbox from "@mui/material/Checkbox"
+import VerifyLetter from "../../components/VerifyLetterModal/VerifyLetter"
 
 const Letters = () => {
   const [list, setList] = useState([])
 
-  useEffect(()=> {
+  useEffect(() => {
     fetch('https://santa.deployed.space/api/wishlists/')
       .then((response) => response.json())
-      .then((data) => {setList(data)})
-  },[])
-  
+      .then((data) => { setList(data) })
+  }, [])
+
   return (
     <>
       <Topbar>Listy</Topbar>
@@ -24,7 +25,7 @@ const Letters = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1
       }}>
-       <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
@@ -38,20 +39,21 @@ const Letters = () => {
                 <TableCell>Data nadesłania</TableCell>
                 <TableCell></TableCell>
               </TableRow>
-          </TableHead>
-          <TableBody>
-          {list.map((item) => (
-            <TableRow key={item.id}>
-              <TableCell>
-                <Checkbox defaultChecked />
-              </TableCell>
-              <TableCell>Przyklad</TableCell>
-              <TableCell><Name fullName={item.name}/></TableCell>
-            </TableRow>
-          ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
+            </TableHead>
+            <TableBody>
+              {list.map((item) => (
+                <TableRow key={item.id}>
+                  <TableCell>
+                    <Checkbox defaultChecked />
+                  </TableCell>
+                  <TableCell>Przyklad</TableCell>
+                  <TableCell><Name fullName={item.name} /></TableCell>
+                  <TableCell><VerifyLetter ID={item.id} /></TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
       </Box>
     </>
   )
