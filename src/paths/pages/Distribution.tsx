@@ -1,6 +1,7 @@
 import Topbar from "../../components/Topbar";
 import Box from "@mui/system/Box";
 
+
 const Distribution = () => {
   return (
     <>
@@ -9,7 +10,6 @@ const Distribution = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1
       }}>
-        Distribution
       </Box>
     </>
   )
