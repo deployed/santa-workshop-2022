@@ -7,6 +7,7 @@ import TableContainer from "@mui/material/TableContainer"
 import Table from "@mui/material/Table"
 import Paper from "@mui/material/Paper"
 import Checkbox from "@mui/material/Checkbox"
+import Country from '../../components/Name/Country'
 
 const Letters = () => {
   const [list, setList] = useState([])
@@ -47,6 +48,9 @@ const Letters = () => {
               </TableCell>
               <TableCell>Przyklad</TableCell>
               <TableCell><Name fullName={item.name}/></TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell><Country country={item.country}/></TableCell>
             </TableRow>
           ))}
           </TableBody>
