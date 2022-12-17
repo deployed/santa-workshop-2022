@@ -97,7 +97,7 @@ const TablePackages = () => {
 
   return (
     <>
-      <TableContainer component={Paper} sx={{ margin: "10px 5px" }}>
+      <TableContainer component={Paper}>
         <Table>
           <TableHead>
             <TableRow>
