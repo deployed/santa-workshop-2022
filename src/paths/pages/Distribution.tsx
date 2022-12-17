@@ -1,6 +1,6 @@
 import Topbar from "../../components/Topbar";
 import Box from "@mui/system/Box";
-import ListModal from "../../components/ListModal";
+import PackagesList from "../../components/PackagesList";
 
 const Distribution = () => {
   return (
@@ -10,8 +10,8 @@ const Distribution = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1
       }}>
+        <PackagesList/>
       </Box>
-      
     </>
   )
 }
