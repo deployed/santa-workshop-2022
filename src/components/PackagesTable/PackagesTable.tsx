@@ -11,24 +11,35 @@ import { TableContainer } from "@mui/material";
 import "./PackagesTable.css";
 import PackageStatus from "../PackageStatus";
 import FormatDate from "../FormatDate";
+import { useEffect, useState } from "react";
 
-function createData(
-  id: number,
-  name: string,
-  status: string,
-  country: string,
-  city: string,
-  created_at: string
-) {
-  return { id, name, status, country, city, created_at };
-}
+type RowsDataType = {
+  id: number;
+  name: string;
+  status: string;
+  country: string;
+  city: string;
+  createdAt: string;
+};
 
-const rows = [
-  createData(0, "Marek", "new", "Polska", "Kraków", "2022-12-17T14:01:31.184Z"),
-  createData(1, "Zosia", "new", "Polska", "Kraków", "2023-10-17T14:01:31.184Z"),
-];
+const PackagesTable = () => {
+  const [rows, setRows] = useState<RowsDataType[]>([]);
 
-const packagesTable = () => {
+  const fetchRowsData = async (url: string) => {
+    const response = await fetch(url);
+    if (!response.ok) {
+      console.error("cannot fetch the data");
+    }
+    const data = await response.json();
+    return data;
+  };
+
+  useEffect(() => {
+    fetchRowsData("https://santa.deployed.space/api/packages/")
+      .then((data) => setRows(() => data))
+      .catch((err) => console.log(err.message));
+  }, []);
+
   const titles = [
     "ID listu",
     "Imię i Nazwisko",
@@ -93,7 +104,7 @@ const packagesTable = () => {
                     <TextComponent>{row.city}</TextComponent>
                   </TableCell>
                   <TableCell align="center">
-                    <FormatDate strangeDate={row.created_at} />
+                    <FormatDate strangeDate={row.createdAt} />
                   </TableCell>
                   <TableCell align="center">pakuj</TableCell>
                 </TableRow>
@@ -106,4 +117,4 @@ const packagesTable = () => {
   );
 };
 
-export default packagesTable;
+export default PackagesTable;
