@@ -1,4 +1,5 @@
 import Box from "@mui/system/Box"
+import ModalPackage from "../../components/ModalPackage"
 import Topbar from "../../components/Topbar"
 
 const Packages = () => {
@@ -8,7 +9,7 @@ const Packages = () => {
       <Box component="main" sx={{
         backgroundColor: "#E7DCD5",
         flexGrow: 1
-      }}>Packages</Box>
+      }}><ModalPackage/></Box>
     </>
   )
 }

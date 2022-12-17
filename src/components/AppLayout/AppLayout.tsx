@@ -24,7 +24,8 @@ const AppLayout = () => {
         </List>
       </Sidebar>
       <Box sx={{ flexGrow: 1 , display: "flex", flexDirection: "column" }}>
-        <ModalPackage/>
+        
+        <Outlet />
       </Box>
     </Box>
   )
