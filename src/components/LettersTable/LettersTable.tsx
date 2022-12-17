@@ -7,6 +7,7 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 import Checkbox from '@mui/material/Checkbox';
+import TextInLetterTable from '../TextInLetterTable';
 
 interface TableHeaderElementProps {
     title: string
@@ -33,7 +34,13 @@ export default function LettersTable() {
                         <TableCell>
                             <Checkbox/>
                         </TableCell>
-                        {titles.map(title => {return <TableHeaderElement title={title}/>})}
+                        {titles.map(title => {return <TableHeaderElement key={title} title={title}/>})}
+                    </TableRow>
+                    <TableRow>
+                        <TableCell>
+                            <Checkbox/>
+                        </TableCell>
+                        {titles.map(title => {return <TextInLetterTable debug>{title}</TextInLetterTable>})}
                     </TableRow>
                 </TableHead>
             </Table>
