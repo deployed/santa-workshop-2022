@@ -1,14 +1,20 @@
 import Box from "@mui/system/Box";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const DistributionTimer = () => {
-  const [seconds, setSeconds] = useState(500);
+  const [seconds, setSeconds] = useState(0);
+  const fetchTimer = async() => {
+    const result = await fetch("https://santa.deployed.space/api/distribution/timer/");
+    const { seconds } = await result.json();
+    setSeconds(seconds);
+  };
+  useEffect(() => {fetchTimer()}, []);
   setTimeout(() => {
     if (seconds > 0)
       setSeconds(seconds - 1);
   }, 1000);
-  let minutes: number = seconds / 60 - seconds / 60 % 1;
-  let secondsToDisplay: number = seconds - (minutes * 60);
+  const minutes = seconds / 60 - seconds / 60 % 1;
+  const secondsToDisplay = seconds - (minutes * 60);
   return (
     <Box>
       <span style={{ fontSize: 18 }}>Czas odlotu:</span>
