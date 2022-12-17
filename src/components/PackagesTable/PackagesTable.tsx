@@ -12,6 +12,7 @@ import "./PackagesTable.css";
 import PackageStatus from "../PackageStatus";
 import FormatDate from "../FormatDate";
 import { useEffect, useState } from "react";
+import PackButton from "../PackButton";
 
 type RowsDataType = {
   id: number;
@@ -106,7 +107,12 @@ const PackagesTable = () => {
                   <TableCell align="center">
                     <FormatDate strangeDate={row.createdAt} />
                   </TableCell>
-                  <TableCell align="center">pakuj</TableCell>
+                  <TableCell align="center">
+                    <PackButton
+                      status={row.status}
+                      onClick={() => console.log("packing")}
+                    />
+                  </TableCell>
                 </TableRow>
               );
             })}
