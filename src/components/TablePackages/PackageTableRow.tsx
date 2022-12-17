@@ -4,7 +4,8 @@ import PackagingStatus from "../PackagingStatus";
 import { Packages } from "./types";
 import CreationDate from "../CreationDate";
 import Name from "../../components/Name/Name"
-import Country from '../../components/Name/Country'
+import Country from '../../components/Name/Country';
+import { SendPresents } from "../SendPresents";
 
 const PackageTableRow = ({ id, kindness, createdAt, status, ...rest }: Packages) => {
   return (
@@ -12,6 +13,7 @@ const PackageTableRow = ({ id, kindness, createdAt, status, ...rest }: Packages)
       <TableCell>
         <CheckBoxOutlineBlankOutlined />
       </TableCell>
+
       <TableCell>
         {id}
       </TableCell>
@@ -28,6 +30,10 @@ const PackageTableRow = ({ id, kindness, createdAt, status, ...rest }: Packages)
         {rest.city}
       </TableCell>
       <CreationDate date={createdAt}/>
+      <TableCell>
+        <SendPresents/>
+      </TableCell>
+
     </TableRow>
   );
 };
