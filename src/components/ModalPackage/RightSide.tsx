@@ -9,9 +9,15 @@ import Select, { SelectChangeEvent } from '@mui/material/Select';
 import {useState} from 'react';
 import Button from '@mui/material/Button';
 import Stack from '@mui/material/Stack';
+import * as React from 'react';
+import { styled } from '@mui/system';
 
-const style = {
-  };
+    const StyledParagraph = styled('p')({
+    color: 'darkslategray',
+    backgroundColor: 'aliceblue',
+    padding: 8,
+    borderRadius: 4,
+    });
 
   function RightSide({ data }: DataInterface) {
         const [age, setAge] = useState('');
@@ -21,17 +27,17 @@ const style = {
         };
 
     return (
-    <Box sx={style}>
+    <Box>
        <Box>
             <Box>
-                <p>ID 12344</p>
-                <p>10.12.2022</p>
-                <p>Pakowanie</p>
+                <StyledParagraph>ID 12344</StyledParagraph>
+                <StyledParagraph>10.12.2022</StyledParagraph>
+                <StyledParagraph></StyledParagraph>
             </Box>
             <Box>
                 <p>Lista:</p>
                 {data.items.map(({name})=>(
-                    <FormControlLabel control={<Checkbox defaultChecked />} label={name} />
+                    <StyledParagraph><FormControlLabel control={<Checkbox defaultChecked />} label={name} /></StyledParagraph>
                 ))}
             </Box>
             <Box>
