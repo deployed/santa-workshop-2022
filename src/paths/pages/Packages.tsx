@@ -3,6 +3,7 @@ import Topbar from "../../components/Topbar";
 import TablePackages from "../../components/TablePackages";
 
 const Packages = () => {
+
   return (
     <>
       <Topbar>Packages topbar</Topbar>
