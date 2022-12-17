@@ -48,7 +48,7 @@ const PackagesList = () => {
                                 <TableRow>
                                     <TableCell>{row.id}</TableCell>
                                     <TableCell>{row.name}</TableCell>
-                                    <TableCell >   {formatAddress(row)}</TableCell> 
+                                    <TableCell>{formatAddress(row)}</TableCell> 
                                 </TableRow>
                             ))}
                     </TableBody>
