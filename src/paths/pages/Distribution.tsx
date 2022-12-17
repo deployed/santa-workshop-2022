@@ -12,7 +12,7 @@ const Distribution = () => {
         flexGrow: 1,
       }}>
         Distribution
-        <ProgressBar/>
+        <ProgressBar deliveriesNumber={14}/>
         <DistributionTimer/>
       </Box>
     </>
