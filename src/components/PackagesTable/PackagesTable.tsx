@@ -27,8 +27,8 @@ const PackagesTable = () => {
 
   const fetchRowsData = async (url: string) => {
     const response = await fetch(url);
-    if (response.status !== 200) {
-      throw new Error("cannot fetch the data");
+    if (!response.ok) {
+      console.error("cannot fetch the data");
     }
     const data = await response.json();
     return data;
