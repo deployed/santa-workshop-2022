@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 interface TextInLetterTableProps {
-    children: string,
+    children: string | number,
     debug?: boolean
 }
 
