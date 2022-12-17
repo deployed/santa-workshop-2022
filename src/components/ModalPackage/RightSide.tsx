@@ -7,6 +7,8 @@ import MenuItem from '@mui/material/MenuItem';
 import FormControl from '@mui/material/FormControl';
 import Select, { SelectChangeEvent } from '@mui/material/Select';
 import {useState} from 'react';
+import Button from '@mui/material/Button';
+import Stack from '@mui/material/Stack';
 
 const style = {
   };
@@ -33,10 +35,8 @@ const style = {
                 ))}
             </Box>
             <Box>
-                
-                <p>Rozmiar paczki</p>
                 <FormControl variant="standard" sx={{ m: 1, minWidth: 120 }}>
-                    <InputLabel id="demo-simple-select-standard-label">Rozmiar paczki</InputLabel>
+                    <InputLabel id="demo-simple-select-standard-label">Wybierz formę</InputLabel>
                     <Select
                     labelId="demo-simple-select-standard-label"
                     id="demo-simple-select-standard"
@@ -49,6 +49,11 @@ const style = {
                     <MenuItem value={30}>Duża</MenuItem>
                     </Select>
                 </FormControl>
+            </Box>
+            <Box>
+                <Stack direction="row" spacing={2}>
+                <Button type="submit" sx={ { background: "#5C76B7", borderRadius: 28 } } >Wyślij</Button>
+                </Stack>
             </Box>
         </Box>
       </Box>
