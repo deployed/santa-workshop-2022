@@ -46,12 +46,24 @@ const packagesTable = () => {
               <TableCell>
                 <Checkbox disabled checked />
               </TableCell>
-              <TableCell align="center">ID listu</TableCell>
-              <TableCell align="center">Imię i Nazwisko</TableCell>
-              <TableCell align="center">Status pakowania</TableCell>
-              <TableCell align="center">Kraj</TableCell>
-              <TableCell align="center">Miasto</TableCell>
-              <TableCell align="center">Data akceptacji</TableCell>
+              <TableCell className="cell" align="center">
+                ID listu
+              </TableCell>
+              <TableCell className="cell" align="center">
+                Imię i Nazwisko
+              </TableCell>
+              <TableCell className="cell" align="center">
+                Status pakowania
+              </TableCell>
+              <TableCell className="cell" align="center">
+                Kraj
+              </TableCell>
+              <TableCell className="cell" align="center">
+                Miasto
+              </TableCell>
+              <TableCell className="cell" align="center">
+                Data akceptacji
+              </TableCell>
               <TableCell align="center"></TableCell>
             </TableRow>
           </TableHead>
