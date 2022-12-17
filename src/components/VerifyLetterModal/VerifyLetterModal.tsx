@@ -25,7 +25,7 @@ const style = {
 };
 
 function VerifyLetterModal() {
-  const [open, setOpen] = React.useState(true);
+  const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
 
