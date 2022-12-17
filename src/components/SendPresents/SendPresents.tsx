@@ -38,7 +38,7 @@ const SendPresents = () => {
 
   return (
     <>
-      <PackButton onClick={handleOpen}>Open modal</PackButton>
+      <PackButton onClick={handleOpen} />
       <Modal
         open={open}
         onClose={handleClose}
