@@ -7,18 +7,19 @@ import TableContainer from "@mui/material/TableContainer"
 import Table from "@mui/material/Table"
 import Paper from "@mui/material/Paper"
 import Checkbox from "@mui/material/Checkbox"
+import VerifyLetter from "../../components/VerifyLetterModal/VerifyLetter"
 import CreationDate from '../../components/CreationDate'
 import Country from '../../components/Name/Country'
 
 const Letters = () => {
   const [list, setList] = useState([])
 
-  useEffect(()=> {
+  useEffect(() => {
     fetch('https://santa.deployed.space/api/wishlists/')
       .then((response) => response.json())
-      .then((data) => {setList(data)})
-  },[])
-  
+      .then((data) => { setList(data) })
+  }, [])
+
   return (
     <>
       <Topbar>Listy</Topbar>
@@ -26,7 +27,7 @@ const Letters = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1
       }}>
-       <TableContainer component={Paper}>
+        <TableContainer component={Paper}>
           <Table>
             <TableHead>
               <TableRow>
@@ -54,7 +55,7 @@ const Letters = () => {
               <TableCell><Country country={item.country}/></TableCell>
               <TableCell></TableCell>
               <CreationDate date={item.createdAt}/>
-              <TableCell></TableCell>
+              <TableCell><VerifyLetter ID={item.id} /></TableCell>
             </TableRow>
           ))}
           </TableBody>
