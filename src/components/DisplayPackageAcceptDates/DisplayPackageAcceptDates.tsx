@@ -16,13 +16,11 @@ function createData(
     return {date};
   }
 
-
-
 const DisplayPackageAcceptDates: React.FC<{date: string} > = ({date}) => {
     const properDate = formatDate(date);
     
     return(
-        
+
         <TableCell component="th" scope="row">
             {properDate}
         </TableCell>
@@ -40,14 +38,10 @@ function formatDate(baseDate: string): string{
     const month = newDate.getMonth();
     const day = newDate.getDay();
 
-    return day + "-" +  month + "-" + year;
+
+    return (day<10 ? "0" + day : day) + "-" +  month + "-" + year;
     
 }
-
-
-
-
-
 
 export default DisplayPackageAcceptDates;
 
