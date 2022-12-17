@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import Topbar from "../../components/Topbar"
+import Name from "../../components/Name/Name"
 import Box from "@mui/system/Box"
 import { TableBody, TableCell, TableHead, TableRow } from "@mui/material"
 import TableContainer from "@mui/material/TableContainer"
@@ -45,6 +46,7 @@ const Letters = () => {
                 <Checkbox defaultChecked />
               </TableCell>
               <TableCell>Przyklad</TableCell>
+              <TableCell><Name fullName={item.name}/></TableCell>
             </TableRow>
           ))}
           </TableBody>
