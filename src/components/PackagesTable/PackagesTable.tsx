@@ -13,6 +13,7 @@ import PackageStatus from "../PackageStatus";
 import FormatDate from "../FormatDate";
 import { useEffect, useState } from "react";
 import VerifyPackageModal from "../Modal";
+import PackButton from "../PackButton";
 
 type RowsDataType = {
   id: number;
@@ -112,7 +113,10 @@ const PackagesTable = () => {
                     <FormatDate strangeDate={row.createdAt} />
                   </TableCell>
                   <TableCell align="center">
-                    <button onClick={()=>setIsModalOpen(true)}>Pakuj</button>
+                    <PackButton
+                      status={row.status}
+                      onClick={()=>setIsModalOpen(true)}
+                    />
                   </TableCell>
                 </TableRow>
               );
