@@ -36,12 +36,6 @@ export default function LettersTable() {
                         </TableCell>
                         {titles.map(title => {return <TableHeaderElement key={title} title={title}/>})}
                     </TableRow>
-                    <TableRow>
-                        <TableCell>
-                            <Checkbox/>
-                        </TableCell>
-                        {titles.map(title => {return <TextInLetterTable debug>{title}</TextInLetterTable>})}
-                    </TableRow>
                 </TableHead>
             </Table>
         </TableContainer>
