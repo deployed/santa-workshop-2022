@@ -12,8 +12,8 @@ const Letters = () => {
 
   useEffect(()=> {
     fetch('https://santa.deployed.space/api/wishlists/')
-  .then((response) => response.json())
-  .then((data) => {setList(data)})
+      .then((response) => response.json())
+      .then((data) => {setList(data)})
   },[])
   
   return (
@@ -22,7 +22,6 @@ const Letters = () => {
       <Box component="main" sx={{
         backgroundColor: "#E7DCD5",
         flexGrow: 1
-
       }}>
        <TableContainer component={Paper}>
           <Table>
