@@ -7,7 +7,7 @@ const PackageStatus = ({ status }: StatusProps) => {
     status === "new" ? "Nowe" : "Pakowanie";
   return (
     <span
-      style={{ border: "2px solid", borderRadius: "30px", padding: "0.5rem" }}
+      style={{ border: "1px solid", borderRadius: "30px", padding: "0.5rem" }}
     >
       {statusPl(status)}
     </span>
