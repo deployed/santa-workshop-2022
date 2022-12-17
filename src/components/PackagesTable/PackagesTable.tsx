@@ -1,4 +1,4 @@
-import React from "react";
+import TextComponent from "../TextComponent";
 import {
   Table,
   TableBody,
@@ -54,8 +54,13 @@ const packagesTable = () => {
               <TableCell>
                 <Checkbox disabled checked />
               </TableCell>
-              {titles.map((title, i) => (
-                <TableCell key={i} className="cell" align="center">
+              {titles.map((title) => (
+                <TableCell
+                  key={title}
+                  className="cell"
+                  style={{ fontWeight: "bolder" }}
+                  align="center"
+                >
                   {title}
                 </TableCell>
               ))}
@@ -65,24 +70,26 @@ const packagesTable = () => {
           </TableHead>
           <TableBody>
             {rows.map((row) => {
-              const values = [
-                row.id,
-                row.name,
-                row.status,
-                row.country,
-                row.city,
-                row.created_at,
-              ];
               return (
                 <TableRow key={row.id}>
                   <TableCell component="th" scope="row">
                     <Checkbox />
                   </TableCell>
-                  {values.map((value, i) => (
-                    <TableCell key={i} align="center">
-                      {value}
-                    </TableCell>
-                  ))}
+                  <TableCell align="center">
+                    <TextComponent>{row.id}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">
+                    <TextComponent>{row.name}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">{row.status}</TableCell>
+                  <TableCell align="center">
+                    <TextComponent>{row.country}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">
+                    <TextComponent>{row.city}</TextComponent>
+                  </TableCell>
+                  <TableCell align="center">{row.created_at}</TableCell>
+                  <TableCell align="center">pakuj</TableCell>
                 </TableRow>
               );
             })}
