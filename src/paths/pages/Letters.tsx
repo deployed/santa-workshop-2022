@@ -2,7 +2,7 @@ import Topbar from "../../components/Topbar"
 import Box from "@mui/system/Box"
 
 import VerifyLetterModal from '../../components/VerifyLetterModal';
-import VerifyLetterModal from "../../components/VerifyLetterModal"
+import VerifyLetterModal2 from "../../components/VerifyLetterModal/LeterModal2/VerifyLetterModal"
 import LettersTable from "../../components/LettersTable"
 
 
@@ -14,9 +14,10 @@ const Letters = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1
       }}>
-       <VerifyLetterModal/>
+       <VerifyLetterModal2/>
        <VerifyLetterModal/>
        <LettersTable />
+
       </Box>
     </>
   )

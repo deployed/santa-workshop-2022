@@ -12,6 +12,8 @@ import "./PackagesTable.css";
 import PackageStatus from "../PackageStatus";
 import FormatDate from "../FormatDate";
 import { useEffect, useState } from "react";
+import VerifyPackageModal from "../Modal";
+import PackButton from "../PackButton";
 
 type RowsDataType = {
   id: number;
@@ -23,6 +25,9 @@ type RowsDataType = {
 };
 
 const PackagesTable = () => {
+
+  const[isModalOpen, setIsModalOpen]=useState(false);
+
   const [rows, setRows] = useState<RowsDataType[]>([]);
 
   const fetchRowsData = async (url: string) => {
@@ -50,6 +55,7 @@ const PackagesTable = () => {
   ];
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
+      <VerifyPackageModal open={isModalOpen} setOpen={setIsModalOpen}/>
       <h1 className="header">Pakowanie</h1>
       <TableContainer sx={{ justifyContent: "center", display: "flex" }}>
         <Table
@@ -106,7 +112,12 @@ const PackagesTable = () => {
                   <TableCell align="center">
                     <FormatDate strangeDate={row.createdAt} />
                   </TableCell>
-                  <TableCell align="center">pakuj</TableCell>
+                  <TableCell align="center">
+                    <PackButton
+                      status={row.status}
+                      onClick={()=>setIsModalOpen(true)}
+                    />
+                  </TableCell>
                 </TableRow>
               );
             })}
