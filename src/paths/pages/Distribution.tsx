@@ -1,6 +1,7 @@
 import Topbar from "../../components/Topbar";
 import Box from "@mui/system/Box";
 import DistributionPackagesList from "../../components/DistributionPackagesList";
+import DistributionTimer from "../../components/DistributionTimer";
 
 const Distribution = () => {
   return (
@@ -12,6 +13,7 @@ const Distribution = () => {
       }}>
         Distribution
         <DistributionPackagesList/>
+        <DistributionTimer/>
       </Box>
     </>
   )
