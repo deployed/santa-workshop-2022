@@ -27,6 +27,14 @@ const rows = [
 ];
 
 const packagesTable = () => {
+  const titles = [
+    "ID listu",
+    "Imię i Nazwisko",
+    "Status pakowania",
+    "Kraj",
+    "Miasto",
+    "Data akceptacji",
+  ];
   return (
     <div style={{ display: "flex", flexDirection: "column" }}>
       <h1 className="header">Pakowanie</h1>
@@ -46,41 +54,35 @@ const packagesTable = () => {
               <TableCell>
                 <Checkbox disabled checked />
               </TableCell>
-              <TableCell className="cell" align="center">
-                ID listu
-              </TableCell>
-              <TableCell className="cell" align="center">
-                Imię i Nazwisko
-              </TableCell>
-              <TableCell className="cell" align="center">
-                Status pakowania
-              </TableCell>
-              <TableCell className="cell" align="center">
-                Kraj
-              </TableCell>
-              <TableCell className="cell" align="center">
-                Miasto
-              </TableCell>
-              <TableCell className="cell" align="center">
-                Data akceptacji
-              </TableCell>
+              {titles.map((title, i) => (
+                <TableCell key={i} className="cell" align="center">
+                  {title}
+                </TableCell>
+              ))}
+
               <TableCell align="center"></TableCell>
             </TableRow>
           </TableHead>
           <TableBody>
             {rows.map((row) => {
+              const values = [
+                row.id,
+                row.name,
+                row.status,
+                row.country,
+                row.city,
+                row.created_at,
+              ];
               return (
                 <TableRow key={row.id}>
                   <TableCell component="th" scope="row">
                     <Checkbox />
                   </TableCell>
-                  <TableCell align="center">{row.id}</TableCell>
-                  <TableCell align="center">{row.name}</TableCell>
-                  <TableCell align="center">{row.status}</TableCell>
-                  <TableCell align="center">{row.country}</TableCell>
-                  <TableCell align="center">{row.city}</TableCell>
-                  <TableCell align="center">{row.created_at}</TableCell>
-                  <TableCell align="center">pakuj</TableCell>
+                  {values.map((value, i) => (
+                    <TableCell key={i} align="center">
+                      {value}
+                    </TableCell>
+                  ))}
                 </TableRow>
               );
             })}
