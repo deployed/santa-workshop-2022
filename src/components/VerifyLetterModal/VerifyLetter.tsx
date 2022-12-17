@@ -115,8 +115,8 @@ export default function ({ ID }: { ID: number }) {
                                         </>
                                     ))}
                                     Lista:<br />
-                                    <Button variant="contained" sx={{ margin: 3, marginLeft: 0, borderRadius: 50, width: 200 }}>AKCEPTUJ I WYŚLIJ</Button>
-                                    <Button variant="outlined" sx={{ margin: 3, marginLeft: 0, marginTop: 0, borderRadius: 50, width: 200 }}>ODRZUĆ I DAJ RÓZGĘ</Button>
+                                    <Button variant="contained" onClick={() => { fetch(`https://santa.deployed.space/api/wishlists/${ID}/accept/`, { method: "POST", body: "" }) }} sx={{ margin: 3, marginLeft: 0, borderRadius: 50, width: 200 }}>AKCEPTUJ I WYŚLIJ</Button>
+                                    <Button variant="outlined" onClick={() => { fetch(`https://santa.deployed.space/api/wishlists/${ID}/reject/`, { method: "POST", body: "" }) }} sx={{ margin: 3, marginLeft: 0, marginTop: 0, borderRadius: 50, width: 200 }}>ODRZUĆ I DAJ RÓZGĘ</Button>
                                 </Typography>
                             </Box>
                         </Box>
