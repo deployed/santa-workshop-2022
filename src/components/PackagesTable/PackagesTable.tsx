@@ -10,6 +10,7 @@ import {
 import { TableContainer } from "@mui/material";
 import "./PackagesTable.css";
 import PackageStatus from "../PackageStatus";
+import FormatDate from "../FormatDate";
 
 function createData(
   id: number,
@@ -23,8 +24,8 @@ function createData(
 }
 
 const rows = [
-  createData(0, "Marek", "new", "Polska", "Kraków", "10-12-2022"),
-  createData(1, "Zosia", "neew", "Polska", "Kraków", "10-12-2022"),
+  createData(0, "Marek", "new", "Polska", "Kraków", "2022-12-17T14:01:31.184Z"),
+  createData(1, "Zosia", "new", "Polska", "Kraków", "2023-10-17T14:01:31.184Z"),
 ];
 
 const packagesTable = () => {
@@ -91,7 +92,9 @@ const packagesTable = () => {
                   <TableCell align="center">
                     <TextComponent>{row.city}</TextComponent>
                   </TableCell>
-                  <TableCell align="center">{row.created_at}</TableCell>
+                  <TableCell align="center">
+                    <FormatDate strangeDate={row.created_at} />
+                  </TableCell>
                   <TableCell align="center">pakuj</TableCell>
                 </TableRow>
               );
