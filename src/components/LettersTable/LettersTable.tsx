@@ -27,18 +27,16 @@ export default function LettersTable() {
     <>
         <h1 style={{padding: '20px'}}>Listy</h1>
         <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-            <TableHead>
-            <TableRow>
-                <TableCell>
-                    <Checkbox></Checkbox>
-                </TableCell>
-                {
-                    titles.map(title => {return <TableHeaderElement title={title}/>})
-                }
-            </TableRow>
-            </TableHead>
-        </Table>
+            <Table sx={{ minWidth: 650 }} aria-label="Lista listów">
+                <TableHead>
+                    <TableRow>
+                        <TableCell>
+                            <Checkbox/>
+                        </TableCell>
+                        {titles.map(title => {return <TableHeaderElement title={title}/>})}
+                    </TableRow>
+                </TableHead>
+            </Table>
         </TableContainer>
     </>
   );
