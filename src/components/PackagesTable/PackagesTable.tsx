@@ -54,9 +54,9 @@ const packagesTable = () => {
               <TableCell>
                 <Checkbox disabled checked />
               </TableCell>
-              {titles.map((title, i) => (
+              {titles.map((title) => (
                 <TableCell
-                  key={i}
+                  key={title}
                   className="cell"
                   style={{ fontWeight: "bolder" }}
                   align="center"
