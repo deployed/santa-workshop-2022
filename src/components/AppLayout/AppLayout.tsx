@@ -9,6 +9,7 @@ import { paths } from '../../paths';
 import Sidebar from './Sidebar';
 
 
+
 const AppLayout = () => {
   return (
     <Box sx={{ display: "flex" }}>
@@ -22,7 +23,7 @@ const AppLayout = () => {
           ))}
         </List>
       </Sidebar>
-      <Box sx={{ flexGrow: 1 , display: "flex", flexDirection: "column" }}>
+      <Box sx={{ flexGrow: 1, display: "flex", flexDirection: "column" }}>
         <Outlet />
       </Box>
     </Box>

@@ -1,0 +1,134 @@
+.RightSide {
+  padding: 30px 0 50px 40px;
+}
+
+.TopMenu {
+  display: flex;
+  justify-content: space-between;
+}
+
+.TopMenu__closeBtn {
+  background: none;
+  border: none;
+  width: 14px;
+  height: 14px;
+  margin-left: 151px;
+  position: absolute;
+  top: 2.5rem;
+  right: 1.5rem;
+}
+
+.BasicInfo {
+  display: flex;
+  justify-content: space-between;
+}
+
+.BasicInfo__list {
+  list-style: none;
+}
+
+.BasicInfo__list--top {
+  display: flex;
+}
+
+/* Button */
+.BasicInfo__btn {
+  padding: 3px 4px;
+  width: 72px;
+  height: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.26);
+  border-radius: 16px;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 46px;
+}
+
+.BasicInfo__btn--icon {
+  width: 15px;
+  height: 12px;
+  margin-right: 7.5px;
+}
+
+.BasicInfo__btn--text {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 18px;
+  letter-spacing: 0.16px;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.BasicInfo__list--span {
+  margin-left: 15px;
+}
+
+.BasicInfo__list--calendar {
+  margin-right: 10px;
+}
+.BasicInfo__list--item {
+  display: flex;
+  align-items: center;
+  color: #757575;
+  margin-top: 6px;
+}
+/* Gifts-list */
+.Gifts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 45px;
+
+  margin-top: 18px;
+  margin-bottom: 83px;
+}
+
+.Gifts__text {
+  padding-left: 34px;
+  margin-bottom: 30px;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  letter-spacing: 0.15px;
+}
+
+.Gifts__list {
+  list-style-image: url("../../../icons/star.svg");
+}
+
+.Gifts__header {
+  margin-top: 42px;
+  font-size: 28px;
+  line-height: 123.5%;
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.Gifts__subtext {
+  font-size: 14px;
+  line-height: 143%;
+  letter-spacing: 0.17px;
+}
+
+/* Submit btns */
+
+.SubmitBtn__wrapper {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.SubmitBtn__wrapper button {
+  max-width: 200px;
+  width: 100%;
+  border: 2px solid #294c89;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 22px;
+}
+
+.SubmitBtns__btn {
+  margin-bottom: 20px;
+}
