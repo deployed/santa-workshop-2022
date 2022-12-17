@@ -8,6 +8,7 @@ import Table from "@mui/material/Table"
 import Paper from "@mui/material/Paper"
 import Checkbox from "@mui/material/Checkbox"
 import CreationDate from '../../components/CreationDate'
+import Country from '../../components/Name/Country'
 
 const Letters = () => {
   const [list, setList] = useState([])
@@ -46,10 +47,14 @@ const Letters = () => {
               <TableCell>
                 <Checkbox defaultChecked />
               </TableCell>
-              <TableCell>Przyklad</TableCell>
+              <TableCell>{item.id}</TableCell>
               <TableCell><Name fullName={item.name}/></TableCell>
+              <TableCell></TableCell>
+              <TableCell></TableCell>
+              <TableCell><Country country={item.country}/></TableCell>
+              <TableCell></TableCell>
               <CreationDate date={item.createdAt}/>
-              
+              <TableCell></TableCell>
             </TableRow>
           ))}
           </TableBody>
