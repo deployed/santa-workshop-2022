@@ -31,7 +31,6 @@ const PackagesTable = () => {
       throw new Error("cannot fetch the data");
     }
     const data = await response.json();
-    console.log(data);
     return data;
   };
 
