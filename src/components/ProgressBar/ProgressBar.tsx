@@ -1,21 +1,7 @@
 import { LinearProgress, Typography } from "@mui/material";
 import Box from "@mui/system/Box";
 import { useEffect, useState } from "react";
-
-interface ProgressBarProps {
-    children: React.ReactNode;
-}
-
-interface PackageDistribution {
-  id: number
-  name: string
-  address: string
-  postcode: string
-  city: string
-  country: string
-  lat: string
-  lng: string
-}
+import {ProgressBarProps, PackageDistribution} from './types';
 
 const ProgressBar = ({children}: ProgressBarProps) => {
   
@@ -30,12 +16,11 @@ const ProgressBar = ({children}: ProgressBarProps) => {
     fetchData();
   },[])
   return (
-    <><Box width={'210px'}>
+   <Box width={'210px'}>
       <Typography fontFamily={'roboto'} fontStyle={'normal'} fontWeight={400} fontSize={'16px'} lineHeight={'150%'}> Obłożenie sań: </Typography>
       <Typography align="right"> {Math.floor(val*100/15)}% </Typography>
       <Box><LinearProgress variant="buffer" value={Math.floor(val*100/15)}/></Box>
-      </Box>
-    </>
+    </Box>
   )
 }
 
