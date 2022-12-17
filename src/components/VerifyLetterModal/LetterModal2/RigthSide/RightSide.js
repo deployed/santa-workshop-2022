@@ -1,6 +1,6 @@
-import ReactLogoCalendar from '../../../icons/calendar.svg';
-import ReactLogoMail from '../../../icons/mail.svg';
-import ReactLogoClose from '../../../icons/close.svg';
+import ReactLogoCalendar from '../../../../icons/calendar.svg';
+import ReactLogoMail from '../../../../icons/mail.svg';
+import ReactLogoClose from '../../../../icons/close.svg';
 import Button from '@mui/material/Button';
 import './RightSide.css';
 

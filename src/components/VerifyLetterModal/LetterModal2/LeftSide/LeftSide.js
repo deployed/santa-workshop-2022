@@ -1,6 +1,6 @@
 import { StyledWrapper, StyledImg, StyledBox, StyledBoxWrapper, StyledNameList } from "./styles";
-import kid from "../../../icons/kid.png";
-import smiley from "../../../icons/smiley.svg";
+import kid from "../../../../icons/kid.png";
+import smiley from "../../../../icons/smiley.svg";
 
 const NameList = ({ header, text, isSvg }) => {
     return (
