@@ -1,5 +1,4 @@
 export function formatDate(baseDate: string): string{
-
     const newDate = new Date(baseDate);
 
     const year = newDate.getFullYear();
@@ -7,8 +6,4 @@ export function formatDate(baseDate: string): string{
     const day = newDate.getDay();
 
     return `${day < 10 ? `0${day}` : day }-${month}-${year}`;
-
 }
-
-
-

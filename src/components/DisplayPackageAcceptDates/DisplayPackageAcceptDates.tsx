@@ -12,8 +12,4 @@ const DisplayPackageAcceptDates: React.FC<{date: string} > = ({date}) => {
     );
 }
 
-
-
 export default DisplayPackageAcceptDates;
-
-
