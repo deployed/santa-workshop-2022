@@ -1,6 +1,6 @@
 import Topbar from "../../components/Topbar";
 import Box from "@mui/system/Box";
-import Timer from "../../components/Timer";
+
 
 const Distribution = () => {
   return (

@@ -2,16 +2,12 @@ import { CircularProgress, Typography } from "@mui/material";
 import Box from "@mui/system/Box";
 import { useEffect, useState } from "react";
 
-interface TimerProps{
-    children: React.ReactNode;
-
-}
 	
 type seconds = {
     seconds : number;
 }
 
-const Timer = ({children} : TimerProps) =>{
+const Timer = () =>{
 
     const fetchData = async () => {
         const data = await fetch(
