@@ -7,28 +7,29 @@ import ListItemText from '@mui/material/ListItemText';
 import Star from '@mui/icons-material/Star';
 import { paths } from '../../paths';
 import Sidebar from './Sidebar';
-import ModalPackage from '../ModalPackage';
-
 
 const AppLayout = () => {
   return (
     <Box sx={{ display: "flex" }}>
-      <Sidebar> 
+      <Sidebar>
         <List component="nav">
           {paths.map(({ path, label, iconComponent }) => (
             <ListItem component={Link} key={path} to={path}>
-              <ListItemIcon sx={{ minWidth: "36px"}}>{iconComponent ? iconComponent : <Star />}</ListItemIcon>
+              <ListItemIcon sx={{ minWidth: "36px" }}>
+                {iconComponent ? iconComponent : <Star />}
+              </ListItemIcon>
               <ListItemText primary={label} />
             </ListItem>
           ))}
         </List>
       </Sidebar>
+
       <Box sx={{ flexGrow: 1 , display: "flex", flexDirection: "column" }}>
-        
+     
         <Outlet />
       </Box>
     </Box>
-  )
-}
+  );
+};
 
-export default AppLayout
+export default AppLayout;
