@@ -9,6 +9,7 @@ import {
 } from "@mui/material";
 import { TableContainer } from "@mui/material";
 import "./PackagesTable.css";
+import PackageStatus from "../PackageStatus";
 
 function createData(
   id: number,
@@ -23,7 +24,7 @@ function createData(
 
 const rows = [
   createData(0, "Marek", "new", "Polska", "Kraków", "10-12-2022"),
-  createData(1, "Zosia", "new", "Polska", "Kraków", "10-12-2022"),
+  createData(1, "Zosia", "neew", "Polska", "Kraków", "10-12-2022"),
 ];
 
 const packagesTable = () => {
@@ -81,7 +82,9 @@ const packagesTable = () => {
                   <TableCell align="center">
                     <TextComponent>{row.name}</TextComponent>
                   </TableCell>
-                  <TableCell align="center">{row.status}</TableCell>
+                  <TableCell align="center">
+                    <PackageStatus status={row.status} />
+                  </TableCell>
                   <TableCell align="center">
                     <TextComponent>{row.country}</TextComponent>
                   </TableCell>
