@@ -9,6 +9,7 @@ import { paths } from '../../paths';
 import Sidebar from './Sidebar';
 
 
+
 const AppLayout = () => {
   return (
     <Box sx={{ display: "flex" }}>
