@@ -9,9 +9,10 @@ import {
   TableRow,
   TableCell,
 } from "@mui/material";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import PackageTableHeaders from "./TablePackageHeaders";
 import CreationDate from "../CreationDate";
+import {DeliveryStatus} from './types';
 
 const headers = [
   "ID listu",
@@ -47,9 +48,17 @@ const mockTableElements: Packages[] = [
 ];
 
 const TablePackages = () => {
-  const [tableElements, setTableElements] =
-    useState<Packages[]>(mockTableElements);
-
+  const [tableElements, setStat] = useState<Packages[]>([]);
+    const fetchData=async()=>{
+        const data = await fetch('https://santa.deployed.space/api/packages/');
+        const delivery : Packages[]= await data.json();
+        setStat(delivery);
+      }
+    
+      useEffect(()=>{
+        fetchData();
+      },[])
+      
   return (
     <>
       <TableContainer component={Paper}>
