@@ -1,6 +1,6 @@
 import Topbar from "../../components/Topbar";
 import Box from "@mui/system/Box";
-
+import ListModal from "../../components/ListModal";
 
 const Distribution = () => {
   return (
@@ -11,6 +11,7 @@ const Distribution = () => {
         flexGrow: 1
       }}>
       </Box>
+      
     </>
   )
 }
