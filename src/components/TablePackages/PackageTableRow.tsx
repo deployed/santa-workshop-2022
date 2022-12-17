@@ -1,7 +1,7 @@
 import { CheckBoxOutlineBlankOutlined } from "@mui/icons-material";
 import { TableCell, TableRow } from "@mui/material";
 import { Packages } from "./types";
-import DisplayPackageAcceptDates from "../DisplayPackageAcceptDates";
+import CreationDate from "../CreationDate";
 
 const PackageTableRow = ({ id, kindness,createdAt,  ...rest }: Packages) => {
   return (
@@ -9,7 +9,7 @@ const PackageTableRow = ({ id, kindness,createdAt,  ...rest }: Packages) => {
       <TableCell>
         <CheckBoxOutlineBlankOutlined />
       </TableCell>
-      <DisplayPackageAcceptDates date={createdAt}/>
+      <CreationDate date={createdAt}/>
     </TableRow>
   );
 };
