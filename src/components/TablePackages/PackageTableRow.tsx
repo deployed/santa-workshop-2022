@@ -8,10 +8,6 @@ const PackageTableRow = ({ id, kindness, ...rest }: Packages) => {
       <TableCell>
         <CheckBoxOutlineBlankOutlined />
       </TableCell>
-      {Object.entries(rest).map(([key, element]) => {
-        return <TableCell key={key}>{element}</TableCell>;
-      })}
-      <TableCell>Pakuj</TableCell>
     </TableRow>
   );
 };

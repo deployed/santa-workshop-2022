@@ -6,13 +6,11 @@ const PackageTableHeaders = ({ headers }: PackageHeadersValues) => {
     <>
       {headers.map((element) => {
         return (
-          <>
-            <TableCell align="center">
-              <Box borderRight={"1px solid gray"}>
-                <Typography sx={{ fontWeight: "bold" }}>{element}</Typography>
-              </Box>
-            </TableCell>
-          </>
+          <TableCell align="center" sx={{ paddingLeft: "0px" }}>
+            <Box borderRight={"1px solid gray"}>
+              <Typography sx={{ fontWeight: "bold" }}>{element}</Typography>
+            </Box>
+          </TableCell>
         );
       })}
     </>
