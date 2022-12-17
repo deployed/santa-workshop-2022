@@ -2,7 +2,7 @@ import React from 'react'
 import TableCell from '@mui/material/TableCell';
 import {formatDate} from './utils'
 
-const DisplayPackageAcceptDates: React.FC<{date: string} > = ({date}) => {
+const CreationDate: React.FC<{date: string} > = ({date}) => {
     const properDate = formatDate(date);
     
     return(
@@ -12,4 +12,4 @@ const DisplayPackageAcceptDates: React.FC<{date: string} > = ({date}) => {
     );
 }
 
-export default DisplayPackageAcceptDates;
+export default CreationDate;
