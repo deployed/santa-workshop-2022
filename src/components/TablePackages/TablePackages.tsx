@@ -1,4 +1,6 @@
 import { CheckBoxOutlineBlankOutlined } from "@mui/icons-material";
+import { Packages } from "./types";
+import PackageTableRow from "./PackageTableRow";
 import {
   Table,
   TableContainer,
@@ -6,10 +8,9 @@ import {
   TableHead,
   TableRow,
   TableCell,
-  Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import PackageTableHeaders from "./TablePackageHeaders";
 
 const headers = [
   "ID listu",
@@ -44,53 +45,6 @@ const mockTableElements: Packages[] = [
   },
 ];
 
-interface HeadersValues {
-  headers: string[];
-}
-
-interface Packages {
-  id: number;
-  wishListId: number;
-  name: string;
-  kindness: number;
-  status: string;
-  country: string;
-  city: string;
-  createdAt: string;
-}
-
-const Headers = ({ headers }: HeadersValues) => {
-  return (
-    <>
-      {headers.map((element) => {
-        return (
-          <>
-            <TableCell align="center">
-              <Box borderRight={"1px solid gray"}>
-                <Typography sx={{ fontWeight: "bold" }}>{element}</Typography>
-              </Box>
-            </TableCell>
-          </>
-        );
-      })}
-    </>
-  );
-};
-
-const Row = ({ id, kindness, ...rest }: Packages) => {
-  return (
-    <TableRow>
-      <TableCell>
-        <CheckBoxOutlineBlankOutlined />
-      </TableCell>
-      {Object.entries(rest).map(([key, element]) => {
-        return <TableCell key={key}>{element}</TableCell>;
-      })}
-      <TableCell>Pakuj</TableCell>
-    </TableRow>
-  );
-};
-
 const TablePackages = () => {
   const [tableElements, setTableElements] =
     useState<Packages[]>(mockTableElements);
@@ -104,11 +58,11 @@ const TablePackages = () => {
               <TableCell>
                 <CheckBoxOutlineBlankOutlined />
               </TableCell>
-              <Headers headers={headers} />
+              <PackageTableHeaders headers={headers} />
             </TableRow>
           </TableHead>
           {tableElements.map((element) => {
-            return <Row {...element} />;
+            return <PackageTableRow {...element} />;
           })}
         </Table>
       </TableContainer>
