@@ -11,8 +11,8 @@ const Letters = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1
       }}>
-       <VerifyLetterModal/>
-       <LettersTable />
+        <VerifyLetterModal/>
+        <LettersTable />
       </Box>
     </>
   )
