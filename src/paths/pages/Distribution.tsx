@@ -10,8 +10,7 @@ const Distribution = () => {
         backgroundColor: "#E7DCD5",
         flexGrow: 1
       }}>
-        
-        <PackagesList> </PackagesList>
+        Distribution
       </Box>
     </>
   )
